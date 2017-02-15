@@ -17,7 +17,18 @@ int main() {
   c.blue = 0;
   
   clear_screen(s);
+  
+  draw_line(-25,0,-200,-100,s,c);
+  draw_line(0,-25,-200,-300,s,c);
+  draw_line(25,0,200,100,s,c);
+  draw_line(0,25,200,300,s,c);
+  draw_line(-25,0,-200,100,s,c);
+  draw_line(0,25,-200,300,s,c);
+  draw_line(25,0,200,-100,s,c);
+  draw_line(0,-25,200,-300,s,c);
 
+  draw_line(-200,0,200,0,s,c);
+  draw_line(0,-200,0,200,s,c);
 
   display(s);
   save_extension(s, "lines.png");

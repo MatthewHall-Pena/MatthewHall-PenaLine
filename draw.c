@@ -23,15 +23,15 @@ void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
     int b = -1 *(x1 - x0);
 	
     int signY=1;
-    bool bigY=false;
+    int bigY=0;
 	
     if(a>-b){
-      bigY = true;
+      bigY = 1;
     }	
     if(y1<y0){
       signY=-1;
     }	
-    if(bigY){
+    if(bigY==1){
       int d = (2 * a) + b*signY;
       while(x <= x1){
 	plot(s,c,x,y);
