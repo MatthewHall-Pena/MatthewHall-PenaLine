@@ -31,9 +31,9 @@ jdyrlandweaver
 ====================*/
 void plot( screen s, color c, int x, int y) {
   int newy = YRES/2 - 1 - y;
-  x+= XRES/2;
-  if ( x >= 0 && x < XRES && newy >=0 && newy < YRES )
-    s[x][newy] = c;
+  int newx = XRES/2 + x +1;
+  if ( newx >= 0 && newx < XRES && newy >=0 && newy < YRES )
+    s[newx][newy] = c;
 }
 
 /*======== void clear_screen() ==========

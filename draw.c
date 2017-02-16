@@ -28,31 +28,34 @@ void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
     if(a>-b){
       bigY = 1;
     }	
+
     if(y1<y0){
       signY=-1;
     }	
-    if(bigY==1){
+
+    if(bigY==0){
+
       int d = (2 * a) + b*signY;
       while(x <= x1){
-	plot(s,c,x,y);
-	if (d*signY > 0){
-	  y+=signY;
-	  d+=2*b*signY;
-	}
-	d += 2*a;
-	x++;
-      }
+		plot(s,c,x,y);
+		if (d*signY > 0){
+		  y+=signY;
+		  d+=2*b*signY;
+		}
+		d += 2*a;
+		x++;
+	    }
     }
     else{
       int d = (2 * b)*signY + a;
       while(y*signY <= y1*signY){
-	plot(s,c,x,y);
-	if (d*signY < 0){
-	  x++;
-	  d+=2*a;
-	}
-	d += 2*b*signY;
-	y+=signY;
+		plot(s,c,x,y);
+		if (d*signY < 0){
+		  x++;
+		  d+=2*a;
+		}
+		d += 2*b*signY;
+		y+=signY;
       }
     }
 }
