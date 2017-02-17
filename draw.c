@@ -25,7 +25,7 @@ void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
     int signY=1;
     int bigY=0;
 	
-    if(a>-b){
+    if(a>-b ||-a>-b){
       bigY = 1;
     }	
 
